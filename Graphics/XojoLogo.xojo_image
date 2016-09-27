@@ -1,0 +1,43 @@
+#tag MultiImage
+Image XojoLogo
+	#tag ImageRepresentation
+		SaveInfo = APHRcwECAQAAAAHKAAAAAAHKAAIAAANEZXYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADPFdbMSCsAAABMlPwXbXd4LWxvZ28tdGFsbC1zbWFsbC5wbmcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEyVBs5m6PZQTkdmOEJJTf////8AAAkAAAAAAAAAAAAAAAAAAAAACEdyYXBoaWNzABAACAAAzxYdHAAAABEACAAAzmchNgAAAAEAGABMlPwATJSnAEaKegBGsWYADg53AAwd9QACAFBEZXY6WG9qbzoAU291cmNlOgBpT1MgQXBwIFN0b3JlOgBEcmF3OgBTb3VyY2U6AEdyYXBoaWNzOgBtd3gtbG9nby10YWxsLXNtYWxsLnBuZwAOADAAFwBtAHcAeAAtAGwAbwBnAG8ALQB0AGEAbABsAC0AcwBtAGEAbABsAC4AcABuAGcADwAIAAMARABlAHYAEgBHL1hvam8vU291cmNlL2lPUyBBcHAgU3RvcmUvRHJhdy9Tb3VyY2UvR3JhcGhpY3MvbXd4LWxvZ28tdGFsbC1zbWFsbC5wbmcAABMADC9Wb2x1bWVzL0Rldv//AAAAAAAAAAA=
+		FullPath = /Volumes/Dev/Xojo/Source/iOS App Store/Draw/Source/Graphics/mwx-logo-tall-small.png
+		PartialPath = Graphics\mwx-logo-tall-small.png
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 180.00
+			Orientation = Any
+			Platform = 15
+			PPI = 72
+			VSize = 235.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+	#tag ImageRepresentation
+		SaveInfo = APHRcwECAQAAAAGyAAAAAAGyAAIAAANEZXYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADPFdbMSCsAAABMlPwRbXd4LWxvZ28tdGFsbC5wbmcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEyVB85m6R5QTkdmOEJJTf////8AAAkAAAAAAAAAAAAAAAAAAAAACEdyYXBoaWNzABAACAAAzxYdHAAAABEACAAAzmchXgAAAAEAGABMlPwATJSnAEaKegBGsWYADg53AAwd9QACAEpEZXY6WG9qbzoAU291cmNlOgBpT1MgQXBwIFN0b3JlOgBEcmF3OgBTb3VyY2U6AEdyYXBoaWNzOgBtd3gtbG9nby10YWxsLnBuZwAOACQAEQBtAHcAeAAtAGwAbwBnAG8ALQB0AGEAbABsAC4AcABuAGcADwAIAAMARABlAHYAEgBBL1hvam8vU291cmNlL2lPUyBBcHAgU3RvcmUvRHJhdy9Tb3VyY2UvR3JhcGhpY3MvbXd4LWxvZ28tdGFsbC5wbmcAABMADC9Wb2x1bWVzL0Rldv//AAAAAAAAAAA=
+		FullPath = /Volumes/Dev/Xojo/Source/iOS App Store/Draw/Source/Graphics/mwx-logo-tall.png
+		PartialPath = Graphics\mwx-logo-tall.png
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 180.00
+			Orientation = Any
+			Platform = 15
+			PPI = 144
+			VSize = 235.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+	#tag ImageRepresentation
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 180.00
+			Orientation = Any
+			Platform = 15
+			PPI = 216
+			VSize = 235.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+End Image
+#tag EndMultiImage
