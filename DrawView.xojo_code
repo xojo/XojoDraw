@@ -15,7 +15,7 @@ Begin iosView DrawView
       AutoLayout      =   DrawingCanvas, 1, <Parent>, 1, False, +1.00, 1, 1, 0, 
       AutoLayout      =   DrawingCanvas, 2, <Parent>, 2, False, +1.00, 2, 1, 0, 
       AutoLayout      =   DrawingCanvas, 3, TopLayoutGuide, 4, False, +1.00, 1, 1, 0, 
-      Height          =   415.0
+      Height          =   503.0
       Left            =   0
       LockedInPosition=   False
       Scope           =   0

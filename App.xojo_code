@@ -4,7 +4,7 @@ Inherits IOSApplication
 	#tag CompatibilityFlags = TargetIOS
 	#tag Event
 		Sub Open()
-		  // Set up default colors to cycle through
+		  // Set up default colors
 		  Colors.Append(Color.Blue)
 		  Colors.Append(Color.Red)
 		  Colors.Append(Color.Green)

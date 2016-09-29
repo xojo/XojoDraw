@@ -8,13 +8,13 @@ Begin iosView AboutView
    TabTitle        =   ""
    Title           =   "About Xojo Draw"
    Top             =   0
-   Begin iOSLabel Label1
+   Begin iOSLabel AboutLabel
       AccessibilityHint=   ""
       AccessibilityLabel=   ""
-      AutoLayout      =   Label1, 8, , 0, False, +1.00, 1, 1, 170, 
-      AutoLayout      =   Label1, 3, TopLayoutGuide, 4, False, +1.00, 1, 1, *kStdControlGapV, 
-      AutoLayout      =   Label1, 2, <Parent>, 2, False, +1.00, 1, 1, -*kStdGapCtlToViewH, 
-      AutoLayout      =   Label1, 1, <Parent>, 1, False, +1.00, 1, 1, *kStdGapCtlToViewH, 
+      AutoLayout      =   AboutLabel, 8, , 0, False, +1.00, 1, 1, 170, 
+      AutoLayout      =   AboutLabel, 3, TopLayoutGuide, 4, False, +1.00, 1, 1, *kStdControlGapV, 
+      AutoLayout      =   AboutLabel, 2, <Parent>, 2, False, +1.00, 1, 1, -*kStdGapCtlToViewH, 
+      AutoLayout      =   AboutLabel, 1, <Parent>, 1, False, +1.00, 1, 1, *kStdGapCtlToViewH, 
       Enabled         =   True
       Height          =   170.0
       Left            =   20
@@ -73,9 +73,9 @@ Begin iosView AboutView
       AccessibilityHint=   ""
       AccessibilityLabel=   ""
       AutoLayout      =   LogoImage, 8, , 0, False, +1.00, 1, 1, 160, 
-      AutoLayout      =   LogoImage, 3, Label1, 4, False, +1.00, 1, 1, *kStdControlGapV, 
-      AutoLayout      =   LogoImage, 2, Label1, 2, False, +1.00, 1, 1, 0, 
-      AutoLayout      =   LogoImage, 1, Label1, 1, False, +1.00, 1, 1, 0, 
+      AutoLayout      =   LogoImage, 3, AboutLabel, 4, False, +1.00, 1, 1, *kStdControlGapV, 
+      AutoLayout      =   LogoImage, 2, AboutLabel, 2, False, +1.00, 1, 1, 0, 
+      AutoLayout      =   LogoImage, 1, AboutLabel, 1, False, +1.00, 1, 1, 0, 
       ContentMode     =   "1"
       Height          =   160.0
       Image           =   "489998335"
@@ -91,23 +91,52 @@ End
 #tag EndIOSView
 
 #tag WindowCode
-	#tag Constant, Name = kAboutText, Type = Text, Dynamic = False, Default = \"Xojo Draw is made with Xojo\x2C a multi-platform development tool that makes it super-easy to create your own iOS apps.\n\nWant to see how Xojo Draw was made\?\n\nUse the buttons below to get the full source code for Xojo Draw on GitHub or watch the short video on the making of Xojo Draw on YouTube.", Scope = Private
+	#tag Event
+		Sub ToolbarPressed(button As iOSToolButton)
+		  Select Case button
+		  Case GitHubButton
+		    Call ShowURL("https://github.com/xojo/XojoDraw")
+		  Case VideoButton
+		    // Open the YouTube app if available
+		    If Not ShowURL("youtube://youtu.be/fXizfreyVio") Then
+		      // If not, use Safari
+		      Call ShowURL("http://youtu.be/fXizfreyVio")
+		    End If
+		  End Select
+		End Sub
+	#tag EndEvent
+
+
+	#tag Method, Flags = &h21
+		Private Function ShowURL(url As Text) As Boolean
+		  // NSString* launchUrl = @"http://www.xojo.com/";
+		  // [[UIApplication sharedApplication] openURL:[NSURL URLWithString: launchUrl]];
+		  
+		  Declare Function NSClassFromString Lib "Foundation" (name As CFStringRef) As Ptr
+		  Declare Function sharedApplication Lib "UIKit" Selector "sharedApplication" (obj As Ptr) As Ptr
+		  Dim sharedApp As Ptr = sharedApplication(NSClassFromString("UIApplication"))
+		  
+		  // https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/#//apple_ref/occ/clm/NSURL/URLWithString:
+		  Declare Function URLWithString Lib "Foundation" Selector "URLWithString:" ( id As Ptr, URLString As CFStringRef ) As Ptr
+		  Dim nsURL As Ptr = URLWithString(NSClassFromString("NSURL"), url)
+		  
+		  // https://developer.apple.com/Library/ios/documentation/UIKit/Reference/UIApplication_Class/index.html#//apple_ref/occ/instm/UIApplication/openURL:
+		  Declare Function openURL Lib "UIKit" Selector "openURL:" (id As Ptr, nsurl As Ptr) As Boolean
+		  Return openURL(sharedApp, nsURL)
+		End Function
+	#tag EndMethod
+
+
+	#tag Constant, Name = kAboutText, Type = Text, Dynamic = False, Default = \"Xojo Draw is made with Xojo\x2C a multi-platform development tool that makes it super-easy to create your own iOS apps.\n\nWant to see how Xojo Draw was made\?\n\nUse the buttons below to get the full source code for Xojo Draw on GitHub or watch the short iOS QuickStart video on YouTube.", Scope = Private
 	#tag EndConstant
 
 
 #tag EndWindowCode
 
-#tag Events Label1
+#tag Events AboutLabel
 	#tag Event
 		Sub Open()
 		  Me.Text = kAboutText
-		End Sub
-	#tag EndEvent
-#tag EndEvents
-#tag Events LogoImage
-	#tag Event
-		Sub Open()
-		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents
