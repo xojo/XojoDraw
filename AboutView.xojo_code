@@ -100,7 +100,7 @@ End
 		    // Open the YouTube app if available
 		    If Not ShowURL("youtube://youtu.be/fXizfreyVio") Then
 		      // If not, use Safari
-		      Call ShowURL("http://youtu.be/fXizfreyVio")
+		      Call ShowURL("https://youtu.be/fXizfreyVio")
 		    End If
 		  End Select
 		End Sub
